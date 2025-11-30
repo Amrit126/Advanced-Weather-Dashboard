@@ -1,3 +1,51 @@
+import { useState } from 'react'
+import { Link } from 'react-router'
+
 export function Header() {
-    //
+    const [inputText, setInputText] = useState('')
+
+    function searchPlace() {
+        console.log(inputText)
+        setInputText('')
+    }
+
+    function changeInputText(e) {
+        setInputText(e.target.value)
+    }
+
+    function checkKey(e) {
+        if (e.key === "Enter") {
+            searchPlace()
+        }
+    }
+
+    return (
+        <div className="header flex bg-amber-400 p-4 text-2xl justify-between
+         items-center px-6 border-b-2 border-black">
+            <div className="text-4xl tracking-wider">
+                <Link to="/">AeroCast</Link>
+            </div>
+            <div className='flex w-[60%] justify-center items-center'>
+                <input
+                    className="focus:border-black w-[70%] bg-white h-[50%] outline-none border-3 
+                    rounded border-black p-2"
+                    type="search"
+                    placeholder="Search for places..."
+                    value={inputText}
+                    onChange={changeInputText}
+                    onKeyDown={checkKey}
+                />
+                <img
+                    className="w-[60px] cursor-pointer h-full hover:scale-110 transition-all duration-200
+                    active:scale-98"
+                    src="/search-icon.png"
+                    alt="Search icon"
+                    onClick={searchPlace}
+                />
+            </div>
+            <div className="mr-2 transition-all duration-150 hover:scale-110">
+                <Link to="/favorites">Favorites</Link>
+            </div>
+        </div>
+    )
 }

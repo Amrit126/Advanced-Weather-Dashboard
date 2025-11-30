@@ -1,7 +1,9 @@
+import { Header } from '../../components/Header'
+
 export function Favorites() {
     return (
-        <div>
-            This is Favorites Page.
-        </div>
+        <>
+            <Header />
+        </>
     )
 }
