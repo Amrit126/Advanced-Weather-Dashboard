@@ -20,7 +20,7 @@ export function Header() {
     }
 
     return (
-        <div className="header flex bg-amber-400 p-4 text-2xl justify-between
+        <div className="header flex bg-linear-to-r from-cyan-600 to-cyan-500 p-4 text-2xl justify-between
          items-center px-6 border-b-2 border-black">
             <div className="text-4xl tracking-wider">
                 <Link to="/">AeroCast</Link>
@@ -36,7 +36,7 @@ export function Header() {
                     onKeyDown={checkKey}
                 />
                 <img
-                    className="w-[60px] cursor-pointer h-full hover:scale-110 transition-all duration-200
+                    className="w-[55px] cursor-pointer h-full hover:scale-110 transition-all duration-200
                     active:scale-98"
                     src="/search-icon.png"
                     alt="Search icon"
