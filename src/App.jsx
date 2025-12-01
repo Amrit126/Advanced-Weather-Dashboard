@@ -1,4 +1,4 @@
-//import { useState } from 'react'
+import { useState } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import { HomePage } from './pages/home/HomePage'
 import { Forecast } from './pages/forecast/Forecast'
@@ -7,14 +7,32 @@ import { NotFound } from './pages/not found/NotFound'
 import './App.css'
 
 function App() {
-  //const [count, setCount] = useState(0)
+  const [currentCity, setCurrentCity] = useState()
+  const [loading, setLoading] = useState(true)
 
   return (
     <Routes>
-      <Route path="/" element={<HomePage />} />
-      <Route path="/forecast" element={<Forecast />} />
-      <Route path="/favorites" element={<Favorites />} />
-      <Route path="*" element={<NotFound />} />
+      <Route path="/" element={<HomePage
+        currentCity={currentCity}
+        setCurrentCity={setCurrentCity}
+        loading={loading}
+        setLoading={setLoading} />} />
+
+      <Route path="/forecast" element={<Forecast
+        currentCity={currentCity}
+        setCurrentCity={setCurrentCity}
+        loading={loading}
+        setLoading={setLoading} />} />
+
+      <Route path="/favorites" element={<Favorites
+        currentCity={currentCity}
+        setCurrentCity={setCurrentCity}
+        loading={loading}
+        setLoading={setLoading} />} />
+
+      <Route path="*" element={<NotFound />}
+        loading={loading}
+        setLoading={setLoading} />
     </Routes >
   )
 }

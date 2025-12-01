@@ -1,11 +1,17 @@
 import { useState } from 'react'
-import { Link } from 'react-router'
+import { Link, useNavigate } from 'react-router'
 
-export function Header() {
+export function Header({ setLoading }) {
+    const navigate = useNavigate()
     const [inputText, setInputText] = useState('')
 
     function searchPlace() {
-        console.log(inputText)
+        if (!inputText) {
+            alert("Search can't be empty")
+            return
+        }
+        setLoading(true)
+        navigate(`/?city=${inputText}`)
         setInputText('')
     }
 
@@ -35,13 +41,17 @@ export function Header() {
                     onChange={changeInputText}
                     onKeyDown={checkKey}
                 />
-                <img
-                    className="w-[55px] cursor-pointer h-full hover:scale-110 transition-all duration-200
+                <button
+                    className="cursor-pointer h-full hover:scale-110 transition-all duration-200
                     active:scale-98"
-                    src="/search-icon.png"
-                    alt="Search icon"
                     onClick={searchPlace}
-                />
+                >
+                    <img
+                        className="w-[55px]"
+                        src="/search-icon.png"
+                        alt="Search icon"
+                    />
+                </button>
             </div>
             <div className="mr-2 transition-all duration-150 hover:scale-110">
                 <Link to="/favorites">Favorites</Link>

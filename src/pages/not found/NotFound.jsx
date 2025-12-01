@@ -1,9 +1,9 @@
 import { Header } from '../../components/Header'
 
-export function NotFound() {
+export function NotFound({ loading, setLoading }) {
     return (
         <>
-            <Header />
+            <Header loading={loading} setLoading={setLoading} />
             <div
                 className='flex justify-center items-center h-screen bg-yellow-100 text-8xl'
             >

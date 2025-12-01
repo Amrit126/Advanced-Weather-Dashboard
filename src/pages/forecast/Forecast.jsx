@@ -1,9 +1,9 @@
 import { Header } from '../../components/Header'
 
-export function Forecast() {
+export function Forecast({ loading, setLoading }) {
     return (
         <>
-            <Header />
+            <Header loading={loading} setLoading={setLoading} />
         </>
     )
 }
