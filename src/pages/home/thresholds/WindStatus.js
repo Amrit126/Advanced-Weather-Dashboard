@@ -1,4 +1,5 @@
 export function windStatus(num) {
+    num = num * 3.6
     if (num <= 5) {
         return "Calm"
     } else if (num <= 15) {

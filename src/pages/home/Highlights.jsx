@@ -33,13 +33,13 @@ export function Highlights({ currentCity, loading, setLoading }) {
                     rounded-xl bg-linear-to-r from-blue-600 to-blue-400 shadow-2xl transition-all duration-300
                     hover:translate-y-[-3px] shadow-black">
                             <h3 className="font-bold mb-4">Sunrise</h3>
-                            <p>{convertToDate(currentCity.sys.sunrise, false)}</p>
+                            <p>{convertToDate(currentCity.sys.sunrise, false, currentCity.timezone)}</p>
                         </div>
                         <div className="flex flex-col justify-center  items-center p-4 h-full
                     rounded-xl bg-linear-to-r from-blue-600 to-blue-400 shadow-2xl transition-all duration-300
                     hover:translate-y-[-3px] shadow-black">
                             <h3 className="font-bold mb-4">Sunset</h3>
-                            <p>{convertToDate(currentCity.sys.sunset, false)}</p>
+                            <p>{convertToDate(currentCity.sys.sunset, false, currentCity.timezone)}</p>
                         </div>
                         <div className="flex flex-col justify-center  items-center p-4 h-full
                     rounded-xl bg-linear-to-r from-blue-600 to-blue-400 shadow-2xl transition-all duration-300

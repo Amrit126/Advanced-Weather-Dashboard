@@ -33,7 +33,7 @@ export function CurrentWeather({ currentCity, loading, setLoading }) {
                             </div>
                             <div className="flex p-2  justify-center bg-linear-to-r from-blue-200 to-transparent
                          items-center rounded-xl">
-                                <p>{convertToDate(currentCity.dt)} 🕒</p>
+                                <p>{convertToDate(currentCity.dt, true, currentCity.timezone)} 📅</p>
                             </div>
                             <div className="flex p-2 justify-center bg-linear-to-r from-blue-200 to-transparent
                          items-center rounded-xl">
