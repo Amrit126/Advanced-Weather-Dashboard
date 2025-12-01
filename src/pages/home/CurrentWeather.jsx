@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { convertToDate } from "../../utils/formatTime"
+import { getWeatherImage } from '../../utils/pickCorrectIcon'
 
 export function CurrentWeather({ currentCity, loading, setLoading }) {
 
@@ -19,8 +20,11 @@ export function CurrentWeather({ currentCity, loading, setLoading }) {
                     </div>
                     <div className={`${loading ? 'hidden' : 'flex'} w-full h-full gap-4`}>
 
-                        <div className="image w-[45%] border-amber-700 border-2">
-                            <img src="" alt="Image icon" />
+                        <div className="image w-[45%]">
+                            <img
+                                className="w-full h-full object-contain"
+                                src={`/weather-icons/${getWeatherImage(currentCity)}`}
+                                alt="Image icon" />
                         </div>
                         <div className="grid grid-cols-2 gap-4 flex-col w-full text-3xl font-medium">
                             <div className="flex p-2 justify-center bg-linear-to-r from-blue-200 to-transparent
@@ -37,7 +41,7 @@ export function CurrentWeather({ currentCity, loading, setLoading }) {
                             </div>
                             <div className="flex p-2 justify-center bg-linear-to-r from-blue-200 to-transparent
                          items-center rounded-xl">
-                                <p>{currentCity.weather[0].main} ☁️</p>
+                                <p>{currentCity.weather[0].main}</p>
                             </div>
                         </div>
                     </div>
