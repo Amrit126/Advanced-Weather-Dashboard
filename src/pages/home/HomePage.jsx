@@ -18,6 +18,7 @@ export function HomePage({ currentCity, setCurrentCity, loading, setLoading }) {
             if (city) {
                 try {
                     const response = await axios.get(url)
+                    setLoading(true)
                     console.log(response.data)
                     setCurrentCity(response.data)
                 } catch (e) {
@@ -28,11 +29,12 @@ export function HomePage({ currentCity, setCurrentCity, loading, setLoading }) {
         }
 
         fetchData()
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [city])
 
     return (
         <>
-            <Header loading={loading} setLoading={setLoading} />
+            <Header />
             <div className="p-12 bg-gray-100">
                 {/*Below div is for displaying current weather */}
 

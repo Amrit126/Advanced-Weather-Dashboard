@@ -16,23 +16,18 @@ function App() {
         currentCity={currentCity}
         setCurrentCity={setCurrentCity}
         loading={loading}
-        setLoading={setLoading} />} />
+        setLoading={setLoading}
+      />} />
 
       <Route path="/forecast" element={<Forecast
         currentCity={currentCity}
-        setCurrentCity={setCurrentCity}
-        loading={loading}
-        setLoading={setLoading} />} />
+        setCurrentCity={setCurrentCity} />} />
 
       <Route path="/favorites" element={<Favorites
         currentCity={currentCity}
-        setCurrentCity={setCurrentCity}
-        loading={loading}
-        setLoading={setLoading} />} />
+        setCurrentCity={setCurrentCity} />} />
 
-      <Route path="*" element={<NotFound />}
-        loading={loading}
-        setLoading={setLoading} />
+      <Route path="*" element={<NotFound />} />
     </Routes >
   )
 }

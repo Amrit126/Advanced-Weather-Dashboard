@@ -1,9 +1,9 @@
 import { Header } from '../../components/Header'
 
-export function Favorites({ loading, setLoading }) {
+export function Favorites() {
     return (
         <>
-            <Header loadin={loading} setLoading={setLoading} />
+            <Header />
         </>
     )
 }

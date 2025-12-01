@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router'
 
-export function Header({ setLoading }) {
+export function Header() {
     const navigate = useNavigate()
     const [inputText, setInputText] = useState('')
 
@@ -10,7 +10,6 @@ export function Header({ setLoading }) {
             alert("Search can't be empty")
             return
         }
-        setLoading(true)
         navigate(`/?city=${inputText}`)
         setInputText('')
     }
