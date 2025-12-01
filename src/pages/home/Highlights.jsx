@@ -14,7 +14,7 @@ export function Highlights({ currentCity, loading, setLoading }) {
         setTimeout(() => {
             setLoading(false)
         }, 900)
-    }, [loading])
+    }, [loading, setLoading])
 
     function viewForecastPage(city) {
         navigate(`forecast/?city=${city}`)

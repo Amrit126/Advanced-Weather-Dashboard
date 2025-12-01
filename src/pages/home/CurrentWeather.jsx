@@ -7,7 +7,7 @@ export function CurrentWeather({ currentCity, loading, setLoading }) {
         setTimeout(() => {
             setLoading(false)
         }, 900)
-    }, [loading])
+    }, [loading, setLoading])
 
     return (
         <>

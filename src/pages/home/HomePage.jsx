@@ -29,8 +29,7 @@ export function HomePage({ currentCity, setCurrentCity, loading, setLoading }) {
         }
 
         fetchData()
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [city])
+    }, [city, setLoading, setCurrentCity])
 
     return (
         <>
