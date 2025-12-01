@@ -1,13 +1,15 @@
 import dayjs from 'dayjs'
 
 export function convertToDate(seconds, date) {
-    let time = seconds * 1000
+    let time = seconds
     let now
     if (date) {
-        now = dayjs(time).format("dddd, MMMM D")
+        now = dayjs.unix(time).format("dddd, MMMM D")
     } else {
-        now = dayjs(time).format("h:mm A")
+        now = dayjs.unix(time).format("h:mm A")
     }
 
     return now
 }
+
+console.log(convertToDate(1764520970, false))
