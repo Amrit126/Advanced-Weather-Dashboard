@@ -25,12 +25,12 @@ export function Header() {
     }
 
     return (
-        <div className="header flex bg-linear-to-r from-cyan-600 to-cyan-500 p-4 text-2xl justify-between
-         items-center px-6 border-b-2 border-black">
+        <div className="header flex flex-col gap-2 md:gap-0 md:flex-row bg-linear-to-r from-cyan-600
+         to-cyan-500 p-4 text-xl md:justify-between items-center px-6 border-b-2 border-black">
             <div className="text-4xl tracking-wider">
                 <Link to="/">AeroCast</Link>
             </div>
-            <div className='flex w-[60%] justify-center items-center'>
+            <div className='flex w-full md:w-[60%] justify-center items-center'>
                 <input
                     className="focus:border-black w-[70%] bg-white h-[50%] outline-none border-3 
                     rounded border-black p-2"
@@ -46,7 +46,7 @@ export function Header() {
                     onClick={searchPlace}
                 >
                     <img
-                        className="w-[55px]"
+                        className="w-[50px] md:w-[55px]"
                         src="/search-icon.png"
                         alt="Search icon"
                     />
