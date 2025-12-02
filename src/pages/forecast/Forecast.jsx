@@ -34,7 +34,7 @@ export function Forecast({ apiKey }) {
 
                 <h1 className="text-5xl font-extrabold">Hourly Forecast - {forecast ? forecast.city.name : ''}</h1>
 
-                <div className="grid grid-cols-4 gap-8 my-8 ">
+                <div className="flex flex-wrap justify-center gap-8 my-12">
                     <HourlyCard forecast={forecast} />
                 </div>
 
