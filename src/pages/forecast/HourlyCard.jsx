@@ -8,7 +8,8 @@ export function HourlyCard({ forecast }) {
             forecast.list.slice(0, 4).map(details => {
                 return (
                     <div key={details.dt} className="flex flex-col items-center w-[20%] shadow-black shadow-2xl 
-                    gap-2 text-2xl font-bold p-2 rounded-2xl bg-linear-to-r from-blue-600 to-blue-400">
+                    gap-2 text-2xl font-bold p-2 rounded-2xl bg-linear-to-r from-blue-600 to-blue-400
+                    transition-all duration-300 hover:-translate-y-2.5">
                         <p>{convertToDate(details.dt, false, forecast.city.timezone)}</p>
                         <img
                             className='w-[80%]'

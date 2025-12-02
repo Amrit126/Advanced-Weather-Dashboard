@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import { useSearchParams } from 'react-router'
 import { Header } from '../../components/Header'
 import { HourlyCard } from './HourlyCard'
+import { DailyForecast } from './DailyForecast'
 
 export function Forecast({ apiKey }) {
     const [forecast, setForecast] = useState(null)
@@ -29,13 +30,19 @@ export function Forecast({ apiKey }) {
         <>
             <Header />
 
-            <div className="p-12 bg-gray-100 h-screen">
+            <div className="p-12 bg-gray-100 ">
                 {/*Below div is for displaying hourly forecase */}
 
-                <h1 className="text-5xl font-extrabold">Hourly Forecast - {forecast ? forecast.city.name : ''}</h1>
+                <h1 className="text-5xl font-extrabold">Hourly Forecast - {forecast ? forecast.city.name : 'Loading..'}</h1>
 
                 <div className="flex flex-wrap justify-center gap-8 my-12">
                     <HourlyCard forecast={forecast} />
+                </div>
+
+                <h2 className="text-5xl font-extrabold">Daily Forecast - {forecast ? forecast.city.name : 'Loading...'}</h2>
+
+                <div className="flex flex-wrap justify-center gap-8 my-12">
+                    <DailyForecast forecast={forecast} />
                 </div>
 
             </div>
