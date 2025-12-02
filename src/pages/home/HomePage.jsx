@@ -5,8 +5,9 @@ import { Header } from '../../components/Header'
 import './HomePage.css'
 import { CurrentWeather } from './CurrentWeather'
 import { Highlights } from './Highlights'
+import { FavoriteButton } from '../../components/FavoriteButton'
 
-export function HomePage({ currentCity, setCurrentCity, loading, setLoading, apiKey }) {
+export function HomePage({ currentCity, setCurrentCity, loading, setLoading, apiKey, favorites, setFavorites }) {
     const [searchParams] = useSearchParams()
     const city = searchParams.get('city') || "Kathmandu"
 
@@ -18,7 +19,6 @@ export function HomePage({ currentCity, setCurrentCity, loading, setLoading, api
                 try {
                     const response = await axios.get(url)
                     setLoading(true)
-                    console.log(response.data)
                     setCurrentCity(response.data)
                 } catch (e) {
                     alert("Sorry!! No Match found")
@@ -51,14 +51,12 @@ export function HomePage({ currentCity, setCurrentCity, loading, setLoading, api
                     <Highlights currentCity={currentCity} loading={loading} setLoading={setLoading} />
                 </div>
 
-                <div className="mt-20 flex flex-col gap-3 justify-center items-center h-[100px] text-xl">
-                    <button className=" p-2 w-[60%] h-[50%] rounded-xl text-2xl hover:border-none
-                    tracking-wider bg-linear-to-r from-red-300 to-red-500 cursor-pointer transition-all
-                    duration-300 hover:scale-105 border-none active:scale-95 shadow-red-800 shadow-2xl" >
-                        Add to Favorites
-                    </button>
-                    <p className="hidden">Added</p>
-                </div>
+                {currentCity
+                    ?
+                    <FavoriteButton favorites={favorites} setFavorites={setFavorites} cityName={currentCity.name} />
+                    :
+                    <></>
+                }
             </div>
         </>
     )

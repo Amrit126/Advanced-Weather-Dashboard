@@ -4,8 +4,9 @@ import { useSearchParams } from 'react-router'
 import { Header } from '../../components/Header'
 import { HourlyCard } from './HourlyCard'
 import { DailyForecast } from './DailyForecast'
+import { FavoriteButton } from '../../components/FavoriteButton'
 
-export function Forecast({ apiKey }) {
+export function Forecast({ apiKey, favorites, setFavorites }) {
     const [forecast, setForecast] = useState(null)
     const [searchParams] = useSearchParams()
     const city = searchParams.get('city') || 'Kathmandu'
@@ -16,7 +17,6 @@ export function Forecast({ apiKey }) {
         const fetchData = async () => {
             try {
                 const response = await axios.get(url)
-                console.log(response.data)
                 setForecast(response.data)
             } catch (e) {
                 console.log(e.status)
@@ -44,6 +44,16 @@ export function Forecast({ apiKey }) {
                 <div className="flex flex-wrap justify-center gap-8 my-12">
                     <DailyForecast forecast={forecast} />
                 </div>
+
+                {forecast
+                    ?
+                    <FavoriteButton
+                        favorites={favorites}
+                        setFavorites={setFavorites}
+                        cityName={forecast.city.name} />
+                    :
+                    <></>
+                }
 
             </div>
         </>
