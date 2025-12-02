@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { useSearchParams } from 'react-router'
 import { Header } from '../../components/Header'
 import './HomePage.css'
@@ -7,7 +7,8 @@ import { CurrentWeather } from './CurrentWeather'
 import { Highlights } from './Highlights'
 import { FavoriteButton } from '../../components/FavoriteButton'
 
-export function HomePage({ currentCity, setCurrentCity, loading, setLoading, apiKey, favorites, setFavorites }) {
+export function HomePage({ loading, setLoading, apiKey, favorites, setFavorites }) {
+    const [currentCity, setCurrentCity] = useState()
     const [searchParams] = useSearchParams()
     const city = searchParams.get('city') || "Kathmandu"
 
