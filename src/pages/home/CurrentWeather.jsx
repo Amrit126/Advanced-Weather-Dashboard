@@ -23,7 +23,9 @@ export function CurrentWeather({ currentCity, loading, setLoading }) {
                         <div className="image w-[45%]">
                             <img
                                 className="w-full h-full object-contain"
-                                src={`/weather-icons/${getWeatherImage(currentCity)}`}
+                                src={`/weather-icons/${getWeatherImage(currentCity, currentCity.sys.sunrise,
+                                    currentCity.sys.sunset
+                                )}`}
                                 alt="Image icon" />
                         </div>
                         <div className="grid grid-cols-2 gap-4 flex-col w-full text-3xl font-medium">

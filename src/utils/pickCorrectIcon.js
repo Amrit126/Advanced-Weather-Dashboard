@@ -1,6 +1,6 @@
-export function getWeatherImage(current) {
+export function getWeatherImage(current, sunrise, sunset) {
     const main = current.weather[0].main
-    const isDay = current.dt >= current.sys.sunrise && current.dt < current.sys.sunset;
+    const isDay = current.dt >= sunrise && current.dt < sunset;
     switch (main) {
         case "Clear":
             return isDay ? "clear-day.png" : "clear-night.png";
