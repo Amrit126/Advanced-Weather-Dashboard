@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router'
 import { getWeatherImage } from "../../utils/pickCorrectIcon"
 
-export function FavoritesCard({ favorites, setFavorites, cities }) {
+export function FavoritesCard({ favorites, setFavorites, cities, updateLocalStorage }) {
     const navigate = useNavigate()
 
     function redirectToHomePage(city) {
@@ -15,6 +15,7 @@ export function FavoritesCard({ favorites, setFavorites, cities }) {
     function removeCityFromFavorites(city) {
         let temp = favorites.filter(fav => fav !== city)
         setFavorites(temp)
+        updateLocalStorage(temp)
     }
 
     return (

@@ -8,8 +8,15 @@ import './App.css'
 
 function App() {
   const [loading, setLoading] = useState(true)
-  const [favorites, setFavorites] = useState(['Kathmandu', 'Dubai'])
+  const [favorites, setFavorites] = useState(() => {
+    const savedFavorites = JSON.parse(localStorage.getItem('favorites'))
+    return savedFavorites ? savedFavorites : []
+  })
   const apiKey = "ebd5f17ff6f850fedcf9387d831c41b1"
+
+  function updateLocalStorage(fav) {
+    localStorage.setItem('favorites', JSON.stringify(fav))
+  }
 
   return (
     <Routes>
@@ -19,18 +26,21 @@ function App() {
         favorites={favorites}
         setFavorites={setFavorites}
         apiKey={apiKey}
+        updateLocalStorage={updateLocalStorage}
       />} />
 
       <Route path="/forecast" element={<Forecast
         apiKey={apiKey}
         favorites={favorites}
         setFavorites={setFavorites}
+        updateLocalStorage={updateLocalStorage}
       />} />
 
       <Route path="/favorites" element={<Favorites
         apiKey={apiKey}
         favorites={favorites}
         setFavorites={setFavorites}
+        updateLocalStorage={updateLocalStorage}
       />} />
 
       <Route path="*" element={<NotFound />} />

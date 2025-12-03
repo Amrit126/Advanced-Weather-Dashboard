@@ -1,10 +1,12 @@
 //import {useEffect} from 'react'
 
-export function FavoriteButton({ favorites, setFavorites, cityName }) {
+export function FavoriteButton({ favorites, setFavorites, cityName, updateLocalStorage }) {
     const isAdded = favorites.includes(cityName)
 
     function addToFavorites(city) {
-        setFavorites(fav => [...fav, city])
+        const temp = [...favorites, city]
+        setFavorites(temp)
+        updateLocalStorage(temp)
     }
 
     return (

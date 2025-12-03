@@ -6,7 +6,7 @@ import { HourlyCard } from './HourlyCard'
 import { DailyForecast } from './DailyForecast'
 import { FavoriteButton } from '../../components/FavoriteButton'
 
-export function Forecast({ apiKey, favorites, setFavorites }) {
+export function Forecast({ apiKey, favorites, setFavorites, updateLocalStorage }) {
     const [forecast, setForecast] = useState(null)
     const [searchParams] = useSearchParams()
     const city = searchParams.get('city') || 'Kathmandu'
@@ -50,7 +50,9 @@ export function Forecast({ apiKey, favorites, setFavorites }) {
                     <FavoriteButton
                         favorites={favorites}
                         setFavorites={setFavorites}
-                        cityName={forecast.city.name} />
+                        cityName={forecast.city.name}
+                        updateLocalStorage={updateLocalStorage}
+                    />
                     :
                     <></>
                 }

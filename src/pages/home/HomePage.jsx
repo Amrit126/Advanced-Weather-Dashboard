@@ -7,7 +7,7 @@ import { CurrentWeather } from './CurrentWeather'
 import { Highlights } from './Highlights'
 import { FavoriteButton } from '../../components/FavoriteButton'
 
-export function HomePage({ loading, setLoading, apiKey, favorites, setFavorites }) {
+export function HomePage({ loading, setLoading, apiKey, favorites, setFavorites, updateLocalStorage }) {
     const [currentCity, setCurrentCity] = useState()
     const [searchParams] = useSearchParams()
     const city = searchParams.get('city') || "Kathmandu"
@@ -54,7 +54,8 @@ export function HomePage({ loading, setLoading, apiKey, favorites, setFavorites 
 
                 {currentCity
                     ?
-                    <FavoriteButton favorites={favorites} setFavorites={setFavorites} cityName={currentCity.name} />
+                    <FavoriteButton favorites={favorites} setFavorites={setFavorites} cityName={currentCity.name}
+                        updateLocalStorage={updateLocalStorage} />
                     :
                     <></>
                 }

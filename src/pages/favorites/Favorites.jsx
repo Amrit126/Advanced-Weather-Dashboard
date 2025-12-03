@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 import { Header } from '../../components/Header'
 import { FavoritesCard } from './FavoritesCard'
 
-export function Favorites({ apiKey, favorites, setFavorites }) {
+export function Favorites({ apiKey, favorites, setFavorites, updateLocalStorage }) {
     const [cities, setCities] = useState([])
 
     useEffect(() => {
@@ -46,9 +46,10 @@ export function Favorites({ apiKey, favorites, setFavorites }) {
             >Favorites</h2>
             <div className="h-full bg-gray-100 flex flex-wrap gap-8 p-12">
                 {favorites.length > 0 ?
-                    <FavoritesCard favorites={favorites} setFavorites={setFavorites} cities={cities} />
+                    <FavoritesCard favorites={favorites} setFavorites={setFavorites} cities={cities}
+                        updateLocalStorage={updateLocalStorage} />
                     :
-                    <div className='h-screen w-full text-4xl flex items-center justify-center font-semibold'>
+                    <div className='h-screen w-full text-4xl flex mt-4 justify-center font-semibold'>
                         <p>No Favorite Location :(</p>
                     </div>
                 }
