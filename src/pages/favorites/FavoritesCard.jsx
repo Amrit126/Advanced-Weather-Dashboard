@@ -18,7 +18,7 @@ export function FavoritesCard({ favorites, setFavorites, cities }) {
     }
 
     return (
-        cities
+        cities.length > 0
             ?
             cities.map(city => {
                 return (
@@ -53,8 +53,8 @@ export function FavoritesCard({ favorites, setFavorites, cities }) {
                 )
             })
             :
-            <div>
-                <p>Loading...</p>
+            <div className="w-full h-screen flex justify-center">
+                <img src="/spinner.gif" alt="Loading Gif" />
             </div>
     )
 }
