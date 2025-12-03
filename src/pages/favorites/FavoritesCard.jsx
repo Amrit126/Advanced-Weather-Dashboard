@@ -53,7 +53,7 @@ export function FavoritesCard({ favorites, setFavorites, cities }) {
                 )
             })
             :
-            <div className="w-full h-screen flex justify-center">
+            <div className="w-full h-1/2 flex justify-center">
                 <img src="/spinner.gif" alt="Loading Gif" />
             </div>
     )
