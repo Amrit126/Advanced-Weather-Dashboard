@@ -12,6 +12,11 @@ export function FavoritesCard({ favorites, setFavorites, cities }) {
         navigate(`/forecast/?city=${city}`)
     }
 
+    function removeCityFromFavorites(city) {
+        let temp = favorites.filter(fav => fav !== city)
+        setFavorites(temp)
+    }
+
     return (
         cities
             ?
@@ -25,7 +30,9 @@ export function FavoritesCard({ favorites, setFavorites, cities }) {
                             <p>{city.name}</p>
                             <button
                                 title="Remove from favorites"
-                                className="mr-2 cursor-pointer transition-all duration-300 hover:opacity-80">X</button>
+                                className="mr-2 cursor-pointer transition-all duration-300 hover:opacity-80"
+                                onClick={() => removeCityFromFavorites(city.name)}
+                            >X</button>
                         </div>
                         <img src={`/weather-icons/${getWeatherImage(city.icon, city.sunrise, city.sunset)}`}
                             alt="Image Icon" />
