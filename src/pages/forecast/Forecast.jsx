@@ -33,13 +33,15 @@ export function Forecast({ apiKey, favorites, setFavorites, updateLocalStorage }
             <div className="p-12 bg-gray-100 ">
                 {/*Below div is for displaying hourly forecase */}
 
-                <h1 className="text-5xl font-extrabold">Hourly Forecast - {forecast ? forecast.city.name : 'Loading..'}</h1>
+                <h1 className="text-2xl md:text-5xl font-extrabold">
+                    Hourly Forecast - {forecast ? forecast.city.name : 'Loading..'}</h1>
 
                 <div className="flex flex-wrap justify-center gap-8 my-12">
                     <HourlyCard forecast={forecast} />
                 </div>
 
-                <h2 className="text-5xl font-extrabold">Daily Forecast - {forecast ? forecast.city.name : 'Loading...'}</h2>
+                <h2 className="text-2xl md:text-5xl font-extrabold"
+                >Daily Forecast - {forecast ? forecast.city.name : 'Loading...'}</h2>
 
                 <div className="flex flex-wrap justify-center gap-8 my-12">
                     <DailyForecast forecast={forecast} />
