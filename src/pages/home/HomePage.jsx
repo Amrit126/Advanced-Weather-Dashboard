@@ -39,7 +39,7 @@ export function HomePage({ loading, setLoading, apiKey, favorites, setFavorites,
 
                 <h1 className="text-2xl w-full md:text-5xl font-extrabold">Current Weather</h1>
 
-                <div className="mb-10 m-2 md:m-4 md:my-6 my-12 flex justify-center 
+                <div className="mb-10 m-2 md:m-4 my-6 md:my-12 flex justify-center 
                 h-auto md:h-[250px] lg:h-[300px] w-full  mx-auto p-4 bg-linear-to-r
                 from-blue-300 to-blue-500  rounded-lg shadow-2xl transition-all duration-300 hover:scale-105
                  shadow-gray-600">
@@ -47,9 +47,9 @@ export function HomePage({ loading, setLoading, apiKey, favorites, setFavorites,
                 </div>
 
                 {/*Below div is for displaying extra details */}
-                <h2 className="text-2xl w-full md:text-5xl font-extrabold">Highlights</h2>
+                <h2 className="text-2xl w-full md:text-5xl font-extrabold mt-8">Highlights</h2>
 
-                <div className="mb-10 m-2 md:m-4 my-10 h-auto md:text-xl">
+                <div className="mb-10 m-2 md:m-4 my-6 md:my-12 h-auto md:text-xl">
                     <Highlights currentCity={currentCity} loading={loading} setLoading={setLoading} />
                 </div>
 
