@@ -27,12 +27,12 @@ export function Header() {
     return (
         <div className="header flex flex-col gap-2 md:gap-0 md:flex-row bg-linear-to-r from-cyan-600
          to-cyan-500 p-4 text-xl md:justify-between items-center px-6 border-b-2 border-black">
-            <div className="text-4xl tracking-wider">
+            <div className="text-2xl font-bold md:text-4xl tracking-wider">
                 <Link to="/">AeroCast</Link>
             </div>
             <div className='flex w-full md:w-[60%] justify-center items-center'>
                 <input
-                    className="focus:border-black w-[70%] bg-white h-[50%] outline-none border-3 
+                    className="focus:border-black w-[80%] bg-white h-[50%] outline-none border-3 
                     rounded border-black p-2"
                     type="search"
                     placeholder="Search for places..."
@@ -46,13 +46,13 @@ export function Header() {
                     onClick={searchPlace}
                 >
                     <img
-                        className="w-[50px] md:w-[55px]"
+                        className="w-[50px]"
                         src="/search-icon.png"
                         alt="Search icon"
                     />
                 </button>
             </div>
-            <div className="mr-2 transition-all duration-150 hover:scale-110">
+            <div className="mr-2 transition-all duration-150 hover:scale-110 hover:underline">
                 <Link to="/favorites">Favorites</Link>
             </div>
         </div>
