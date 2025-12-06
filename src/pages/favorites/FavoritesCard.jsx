@@ -24,8 +24,8 @@ export function FavoritesCard({ favorites, setFavorites, cities, updateLocalStor
             cities.map(city => {
                 return (
                     <div key={city.sunrise} className="flex flex-col items-center justify-center bg-linear-to-r
-                     from-blue-600 to-blue-400 gap-2 p-2 text-2xl font-bold rounded-2xl shadow-black shadow-2xl 
-                     transition-all duration-300 hover:scale-102">
+                     from-blue-600 to-blue-400 gap-2 p-4 text-sm md:text-2xl font-bold rounded-2xl shadow-black shadow-2xl 
+                     transition-all duration-300 hover:scale-102 md:w-[40%] lg:w-[25%]">
                         <div className="flex justify-between w-full">
                             <div></div>
                             <p>{city.name}</p>
@@ -39,9 +39,9 @@ export function FavoritesCard({ favorites, setFavorites, cities, updateLocalStor
                             alt="Image Icon" />
                         <p>{city.temp} °C 🌡️</p>
                         <p>{city.main}</p>
-                        <div className="flex gap-2">
+                        <div className="flex justify-center gap-2 w-full">
                             <button
-                                className="bg-black p-4 text-white rounded-lg
+                                className="bg-black p-2 lg:p-4 text-white rounded-lg
                         transition-all duration-300 hover:opacity-80 cursor-pointer hover:scale-102"
                                 onClick={() => redirectToHomePage(city.name)}
                             >More Details</button>

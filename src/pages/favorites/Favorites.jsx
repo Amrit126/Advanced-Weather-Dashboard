@@ -44,12 +44,12 @@ export function Favorites({ apiKey, favorites, setFavorites, updateLocalStorage 
             <h2
                 className="text-center py-8 text-5xl bg-gray-100 w-full font-extrabold"
             >Favorites</h2>
-            <div className="h-full bg-gray-100 flex flex-wrap gap-8 p-12">
+            <div className="h-full bg-gray-100 flex flex-wrap justify-center gap-8 p-4">
                 {favorites.length > 0 ?
                     <FavoritesCard favorites={favorites} setFavorites={setFavorites} cities={cities}
                         updateLocalStorage={updateLocalStorage} />
                     :
-                    <div className='h-screen w-full text-4xl flex mt-4 justify-center font-semibold'>
+                    <div className='h-screen w-full text-xl md:text-4xl flex mt-4 justify-center font-semibold'>
                         <p>No Favorite Location :(</p>
                     </div>
                 }
