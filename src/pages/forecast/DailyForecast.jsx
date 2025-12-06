@@ -13,9 +13,9 @@ export function DailyForecast({ forecast }) {
                 if (differenceInSeconds >= secondsInDay) {
                     dt = weather.dt
                     return (
-                        <div key={weather.dt} className="flex flex-col items-center p-4 text-xl md:text-2xl font-bold
+                        <div key={weather.dt} className="flex flex-col items-center p-4 text-sm md:text-2xl font-bold
                          bg-linear-to-r from-blue-600 to-blue-400 rounded-2xl shadow-black shadow-2xl gap-3
-                         transition-all duration-300 hover:-translate-y-2.5 w-full md:w-[30%]">
+                         transition-all duration-300 hover:-translate-y-2.5 md:w-[30%]">
                             <p>{convertToDate(dt, true, forecast.city.timezone)}</p>
                             <img src={`/weather-icons/${getWeatherImage(weather, forecast.city.sunrise,
                                 forecast.city.sunset)}`} />

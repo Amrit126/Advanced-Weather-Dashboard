@@ -36,14 +36,14 @@ export function Forecast({ apiKey, favorites, setFavorites, updateLocalStorage }
                 <h1 className="text-2xl md:text-5xl font-extrabold">
                     Hourly Forecast - {forecast ? forecast.city.name : 'Loading..'}</h1>
 
-                <div className="flex flex-wrap justify-center gap-8 my-12">
+                <div className="grid grid-cols-2 md:flex md:flex-wrap md:justify-center gap-4 md:gap-8 my-8 md:my-12">
                     <HourlyCard forecast={forecast} />
                 </div>
 
                 <h2 className="text-2xl md:text-5xl font-extrabold"
                 >Daily Forecast - {forecast ? forecast.city.name : 'Loading...'}</h2>
 
-                <div className="flex flex-wrap justify-center gap-8 my-12">
+                <div className="grid grid-cols-2 md:flex md:flex-wrap md:justify-center gap-4 md:gap-8 my-8 md:my-12">
                     <DailyForecast forecast={forecast} />
                 </div>
 
