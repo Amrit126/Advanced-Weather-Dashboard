@@ -33,6 +33,8 @@ export function HomePage({ loading, setLoading, apiKey, favorites, setFavorites,
 
     return (
         <>
+            <link rel="icon" type="image/png" href="Home-icon.png" />
+            <title>Home Page</title>
             <Header />
             <div className="p-8 md:p-12 bg-gray-100">
                 {/*Below div is for displaying current weather */}

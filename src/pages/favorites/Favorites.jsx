@@ -40,6 +40,9 @@ export function Favorites({ apiKey, favorites, setFavorites, updateLocalStorage 
 
     return (
         <>
+            <link rel="icon" type="image/png" href="/favorite.png" />
+            <title>Favorite Page</title>
+
             <Header />
             <h2
                 className="text-center py-8 text-5xl bg-gray-100 w-full font-extrabold"

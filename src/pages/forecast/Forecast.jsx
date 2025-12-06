@@ -28,6 +28,9 @@ export function Forecast({ apiKey, favorites, setFavorites, updateLocalStorage }
 
     return (
         <>
+            <link rel="icon" type="image/png" href="/forecast-icon.png" />
+            <title>Forecast Page</title>
+
             <Header />
 
             <div className="p-12 bg-gray-100 ">
