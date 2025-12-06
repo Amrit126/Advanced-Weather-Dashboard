@@ -18,9 +18,9 @@ export function CurrentWeather({ currentCity, loading, setLoading }) {
                     <div className={`${loading ? 'flex' : 'hidden'} w-full h-full gap-4 justify-center items-center`}>
                         <img src="/spinner.gif" />
                     </div>
-                    <div className={`${loading ? 'hidden' : 'flex'} w-full h-full gap-4`}>
+                    <div className={`${loading ? 'hidden' : 'flex'} flex-col md:flex-row w-full h-full gap-4`}>
 
-                        <div className="image w-[45%]">
+                        <div className="image md:w-[45%]">
                             <img
                                 className="w-full h-full object-contain"
                                 src={`/weather-icons/${getWeatherImage(currentCity, currentCity.sys.sunrise,
@@ -28,10 +28,11 @@ export function CurrentWeather({ currentCity, loading, setLoading }) {
                                 )}`}
                                 alt="Image icon" />
                         </div>
-                        <div className="grid grid-cols-2 gap-4 flex-col w-full text-3xl font-medium">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 flex-col w-full text-xl 
+                        md:text-3xl font-medium">
                             <div className="flex p-2 justify-center bg-linear-to-r from-blue-200 to-transparent
                          items-center rounded-xl">
-                                <p className="text-6xl font-bold">{currentCity.main.temp}°C 🌡️</p>
+                                <p className="font-bold">{currentCity.main.temp}°C 🌡️</p>
                             </div>
                             <div className="flex p-2  justify-center bg-linear-to-r from-blue-200 to-transparent
                          items-center rounded-xl">

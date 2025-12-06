@@ -34,21 +34,21 @@ export function HomePage({ loading, setLoading, apiKey, favorites, setFavorites,
     return (
         <>
             <Header />
-            <div className="p-12 bg-gray-100">
+            <div className="p-8 md:p-12 bg-gray-100">
                 {/*Below div is for displaying current weather */}
 
-                <h1 className="text-5xl font-extrabold">Current Weather</h1>
+                <h1 className="text-2xl w-full md:text-5xl font-extrabold">Current Weather</h1>
 
-                <div className="mb-10 m-4 my-6 flex h-[300px] w-[90%] mx-auto p-4 
+                <div className="mb-10 m-2 md:m-4 my-6 flex h-auto md:h-[250px] lg:h-[300px] w-full md:w-[90%] mx-auto p-4 
                 bg-linear-to-r from-blue-300 to-blue-500  rounded-lg shadow-2xl transition-all duration-300
                 hover:scale-105 shadow-gray-600">
                     <CurrentWeather currentCity={currentCity} loading={loading} setLoading={setLoading} />
                 </div>
 
                 {/*Below div is for displaying extra details */}
-                <h2 className="text-5xl font-extrabold">Highlights</h2>
+                <h2 className="text-2xl w-full md:text-5xl font-extrabold">Highlights</h2>
 
-                <div className="mb-10 m-4 my-10 h-[250px] text-xl">
+                <div className="mb-10 m-2 md:m-4 my-10 h-auto md:text-xl">
                     <Highlights currentCity={currentCity} loading={loading} setLoading={setLoading} />
                 </div>
 

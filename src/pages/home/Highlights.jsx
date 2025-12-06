@@ -30,7 +30,8 @@ export function Highlights({ currentCity, loading, setLoading }) {
                     <div className={`w-full h-full ${loading ? 'flex' : 'hidden'} justify-center items-center`}>
                         <img src="/spinner.gif" alt="Loading Gif" />
                     </div>
-                    <div className={`${loading ? 'hidden' : 'grid'} grid-cols-4 gap-6 w-full h-full`}>
+                    <div className={`${loading ? 'hidden' : 'grid'} grid-cols-2 md:grid-cols-4 md:gap-6 gap-4
+                    w-full h-full`}>
                         <Card>
                             <h3 className="font-bold mb-4">Sunrise</h3>
                             <p>{convertToDate(currentCity.sys.sunrise, false, currentCity.timezone)}</p>
@@ -71,7 +72,7 @@ export function Highlights({ currentCity, loading, setLoading }) {
                         </Card>
 
                         <div className="flex flex-col justify-center items-center rounded-xl h-full
-                    bg-black text-white text-3xl transition-all duration-300 hover:scale-105
+                    bg-black text-white text-lg md:text-3xl transition-all duration-300 hover:scale-105
                     active:scale-95 shadow-black shadow-2xl ">
                             <button
                                 className="w-full h-full cursor-pointer"
