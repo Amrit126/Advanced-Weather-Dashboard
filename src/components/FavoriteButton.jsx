@@ -10,7 +10,7 @@ export function FavoriteButton({ favorites, setFavorites, cityName, updateLocalS
     }
 
     return (
-        <div className="mt-10 md:mt-20 flex flex-col gap-3 justify-center items-center h-auto md:h-[100px] text-xl">
+        <div className="mt-12 flex flex-col gap-3 justify-center items-center h-auto md:h-[100px] text-xl">
             <button
                 className={`${isAdded ? 'hidden' : 'block'} p-2 w-[80%] md:w-[60%] h-[50%] rounded-xl text-xl md:text-2xl 
                 hover:border-none tracking-wider bg-linear-to-r from-red-300 to-red-500 cursor-pointer 
