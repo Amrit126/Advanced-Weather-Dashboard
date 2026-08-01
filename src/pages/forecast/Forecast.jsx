@@ -9,7 +9,7 @@ import { FavoriteButton } from '../../components/FavoriteButton'
 export function Forecast({ apiKey, favorites, setFavorites, updateLocalStorage }) {
     const [forecast, setForecast] = useState(null)
     const [searchParams] = useSearchParams()
-    const city = searchParams.get('city') || 'Kathmandu'
+    const city = searchParams.get('location') || 'Kathmandu'
 
     useEffect(() => {
         const url = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`

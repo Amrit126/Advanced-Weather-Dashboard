@@ -10,7 +10,7 @@ export function Header() {
             alert("Search can't be empty")
             return
         }
-        navigate(`/?city=${inputText}`)
+        navigate(`/?location=${inputText}`)
         setInputText('')
     }
 

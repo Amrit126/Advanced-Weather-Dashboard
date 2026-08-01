@@ -9,7 +9,7 @@ export function FavoritesCard({ favorites, setFavorites, cities, updateLocalStor
     }
 
     function redirectToForecastPage(city) {
-        navigate(`/forecast/?city=${city}`)
+        navigate(`/forecast/?location=${city}`)
     }
 
     function removeCityFromFavorites(city) {

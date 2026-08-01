@@ -19,7 +19,7 @@ export function Highlights({ currentCity, loading, setLoading }) {
     }, [loading, setLoading])
 
     function viewForecastPage(city) {
-        navigate(`forecast/?city=${city}`)
+        navigate(`forecast/?location=${city}`)
     }
 
     return (
